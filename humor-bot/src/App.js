@@ -7,7 +7,7 @@ import https from 'https'
 import Button from '@material-ui/core/Button';
 
 
-const URL = "https://greetez.com:4240/predict"
+const URL = "https://greetez.com:4444/retrieve"
 const feedbackURL = "https://greetez.com:4240/feedback"
 const myURL = "https://pal-ai.github.io/chat"
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
@@ -219,7 +219,7 @@ CheckIdleTime() {
     _idleSecondsCounter++;
     //console.log(_idleSecondsCounter)
     if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-      this.props.triggerNextStep({value : 'yes', trigger: 'start1'});
+      //this.props.triggerNextStep({value : 'yes', trigger: 'start1'});
       _idleSecondsCounter = 0;
     }
 }
@@ -305,7 +305,7 @@ function App() {
   return (
     <div className="App">
       <div>
-      <ChatBot width="100%" enableMobileAutoFocus='true' steps={steps} headerTitle="PAL" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Generator" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
     </div>
   );
