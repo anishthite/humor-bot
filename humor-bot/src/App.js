@@ -160,7 +160,7 @@ CheckIdleTime() {
     _idleSecondsCounter++;
     //console.log(_idleSecondsCounter)
     if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-      this.props.triggerNextStep({value : 'yes', trigger: 'start1'});
+      //this.props.triggerNextStep({value : 'yes', trigger: 'start1'});
       _idleSecondsCounter = 0;
     }
 }
