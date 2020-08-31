@@ -249,7 +249,12 @@ Interfacer.defaultProps = {
 var steps = [
   {
     id: 'start0',
-    message: 'Hello there! Please type a keyword and I will write a joke based on it)',
+    message: 'Hello there! Please type a keyword and I will write a joke based on it',
+    trigger: 'user',
+  },
+  {
+    id: 'continue new',
+    message: 'Thanks for the feedback! Please type another keyword and I will write a joke based on it',
     trigger: 'user',
   },
   {
@@ -267,9 +272,21 @@ var steps = [
   {
     id: 'message-returner',
     component: <Retriever />,
-    trigger: 'start0',
+    trigger: 'quality',
     waitAction: true,
     asMessage: true
+  },
+  {
+    id: 'quality',
+    message: 'Was this joke good?',
+    trigger: 'goodoptions'	  
+  },  
+  {
+    id: 'goodoptions',
+    options:[
+	    {value: 'yes', label: 'yes',trigger:'continue new'},
+	    {value: 'no', label: 'no',trigger:'continue new'}
+    ],	  
   },
   {
     id: 'feedback',
