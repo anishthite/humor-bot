@@ -1,0 +1,210 @@
+
+> humor-bot@0.1.0 start /home/tobias/humor-bot/humor-bot
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 192.168.1.10
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://192.168.1.10:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/tobias/humor-bot/humor-bot/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+
+npm ERR! Linux 5.4.0-42-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! humor-bot@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the humor-bot@0.1.0 start script 'react-scripts start'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the humor-bot package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-scripts start
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs humor-bot
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls humor-bot
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/tobias/humor-bot/humor-bot/src/npm-debug.log
+
+> humor-bot@0.1.0 start /home/tobias/humor-bot/humor-bot
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 192.168.1.10
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://192.168.1.10:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/tobias/humor-bot/humor-bot/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+
+npm ERR! Linux 5.4.0-42-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! humor-bot@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the humor-bot@0.1.0 start script 'react-scripts start'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the humor-bot package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-scripts start
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs humor-bot
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls humor-bot
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/tobias/humor-bot/humor-bot/src/npm-debug.log
+
+> humor-bot@0.1.0 start /home/tobias/humor-bot/humor-bot
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 192.168.1.10
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://192.168.1.10:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/tobias/humor-bot/humor-bot/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+
+npm ERR! Linux 5.4.0-42-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! humor-bot@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the humor-bot@0.1.0 start script 'react-scripts start'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the humor-bot package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-scripts start
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs humor-bot
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls humor-bot
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/tobias/humor-bot/humor-bot/src/npm-debug.log
+
+> humor-bot@0.1.0 start /home/tobias/humor-bot/humor-bot
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 192.168.1.10
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://192.168.1.10:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/tobias/humor-bot/humor-bot/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+
+npm ERR! Linux 5.4.0-42-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! humor-bot@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the humor-bot@0.1.0 start script 'react-scripts start'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the humor-bot package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-scripts start
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs humor-bot
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls humor-bot
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/tobias/humor-bot/humor-bot/src/npm-debug.log
+
+> humor-bot@0.1.0 start /home/tobias/humor-bot/humor-bot
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 192.168.1.10
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://192.168.1.10:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/tobias/humor-bot/humor-bot/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+
+npm ERR! Linux 5.4.0-42-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! humor-bot@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the humor-bot@0.1.0 start script 'react-scripts start'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the humor-bot package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-scripts start
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs humor-bot
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls humor-bot
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/tobias/humor-bot/humor-bot/src/npm-debug.log
