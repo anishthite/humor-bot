@@ -32,7 +32,7 @@ window.oninput = function() {
 var history = [];
 
 
-const models = ["/retrieve", "/generate_gpt2_ind"];
+const models = ["/retrieve", "/generate_gpt2_ind", "/generate_dialogpt2", "/generate_pipeline"];
 const model = models[Math.floor(Math.random()*models.length)];
 const URL = BASE_URL + model;
 console.log(model);
@@ -409,7 +409,7 @@ var steps = [
   },
   {
     id: 'feedback-form',
-    message: 'What should have I said?',
+    message: 'Please tell me a better joke (hit enter if you can\'t think of one).',
     trigger: 'user-feedback'
   },
   {
