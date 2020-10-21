@@ -3,9 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ThemeProvider } from 'styled-components';
+
+const theme =  {
+    background: '#f5f8fb',
+    fontFamily: 'Helvetica Neue',
+    headerBgColor: '#2c9c91',
+    headerFontColor: '#fff',
+    headerFontSize: '30px',
+    botBubbleColor: '#2c9c91',
+    // botFontSize: '100px',
+    botFontColor: '#fff',
+    userBubbleColor: '#fff',
+    userFontColor: '#4a4a4a',
+}
+
+
+
 
 ReactDOM.render(
-    <App />,
+	<ThemeProvider theme={theme}>
+    	<App />
+    </ThemeProvider>,
   document.getElementById('root')
 );
 
