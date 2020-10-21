@@ -32,7 +32,7 @@ window.oninput = function() {
 var history = [];
 
 
-const models = ["/retrieve", "/generate_gpt2_ind", "/generate_dialogpt2", "/generate_pipeline"];
+const models = ["/generate_gpt2_ind", "/generate_dialogpt2", "/generate_pipeline"];
 const model = models[Math.floor(Math.random()*models.length)];
 const URL = BASE_URL + model;
 console.log(model);
@@ -347,11 +347,77 @@ Retriever.defaultProps = {
 //};
 
 var steps = [
+ {
+    id: 'startemoji',
+    message: 'Hey there! This is Eddie  (•◡•) /',
+    trigger: 'startemoji2'
+  },
+ {
+    id: 'startemoji2',
+	message: 'Hope you are having a great day! How would you rate your mood today?',
+     	trigger: 'emoji-buttons'
+ 
+ 
+ },
   {
     id: 'start0',
-    message: 'Hello there! Please type a keyword and I will write a joke based on it',
-    trigger: 'user',
+    message: 'Tell me what you want to do today (づ｡◕‿‿◕｡)づ',
+    trigger: 'task_options',
+  },  
+  {
+    id: 'task_options',
+     options:[
+      {value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
+      {value: 'joke', label: 'Give me a joke 🤣',trigger:'jokestart'},
+      {value: 'judge', label: 'Judge my joke ⚖️',trigger:'jokestart'}
+    ],   
+    trigger: 'jokestart',
   },
+  { id: 'jokestart',
+    message: 'Alright! Just pick a topic for me! ヾ(⌐■_■)ノ',
+    trigger: 'topicoptions'	  
+  },
+  {
+    id: 'topicoptions',
+    options: [
+      {value: 'music', label: 'Music 🎵',trigger:'custom'},
+      {value: 'sports', label: 'Sports 🏀',trigger:'custom'},
+      {value: 'school', label: 'School 📝',trigger:'custom'},
+      {value: 'covid', label: 'COVID 🤢',trigger:'custom'},
+      {value: 'random', label: 'Random',trigger:'custom'},
+      {value: 'custom', label: 'Custom',trigger:'custom'}
+    ],
+      trigger: 'custom'
+  },
+  {
+   id: 'custom',
+   message: 'What’s your choice?',
+   trigger: 'user'	  
+  },
+
+{
+    id: 'emoji-buttons',
+    options:[
+      {value: '🤯', label: '🤯',trigger:'start0'},
+      {value: '😱', label: '😱',trigger:'start0'},
+      {value: '😭', label: '😭',trigger:'start0'},
+      {value: '🙁', label: '🙁',trigger:'start0'},
+      {value: '😞', label: '😞',trigger:'start0'},
+      {value: '😊', label: '😊',trigger:'start0'},
+      {value: '😆', label: '😆',trigger:'start0'},
+      {value: '🙃', label: '🙃',trigger:'start0'},
+      {value: '😕', label: '😕',trigger:'start0'}
+    ],
+    trigger: 'start0'
+  },
+
+
+
+  //{
+  //  id: 'start0',
+  //  message: 'Hello there! Please type a keyword and I will write a joke based on it',
+  //  trigger: 'user',
+  //},
   {
     id: 'continue new',
     message: 'Please type another keyword and I will write a joke based on it',
@@ -383,7 +449,7 @@ var steps = [
   },
   {
     id: 'quality',
-    message: 'Was this joke good?',
+    message: 'Did you like the joke?? \ (•◡•) /',
     trigger: 'goodoptions'	  
   },  
   {
@@ -436,7 +502,7 @@ function App() {
   return (
      <div className="App">
 	<div>
-      <ChatBot width="100%" enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Generator" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Generator" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
      </div>
   );
