@@ -1,42 +1,50 @@
 import React from 'react';
 import './App.css';
-import PropTypes from 'prop-types';
-import ChatBot, {Loading} from 'react-simple-chatbot';
-import axios from 'axios'
-import https from 'https'
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+//import PropTypes from 'prop-types';
+import ChatBot from 'react-simple-chatbot';
+//import axios from 'axios'
+//import https from 'https'
+//import Button from '@material-ui/core/Button';
+//import Typography from '@material-ui/core/Typography';
+import FeedbackBadJoke from './components/FeedbackBadJoke.js'
+import FeedbackNoJoke from './components/FeedbackNoJoke.js'
+import Thanks from './components/Thanks.js'
+import GeneratorModel from './components/GeneratorModel.js'
+
 const BASE_URL = "https://greetez.com:4444" 
-const feedbackURL = BASE_URL + "/feedback"
-const myURL = "https://greetez.com:3000"
+const FEEDBACK_URL = BASE_URL + "/feedback"
+//const myURL = "https://greetez.com:3000"
+
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 //const uuidv4 = require('uuid/v4');
 //const myuuid = uuidv4();
 
-var IDLE_TIMEOUT = 30; //seconds
-var _idleSecondsCounter = 0;
-var interval;
-window.onkeydown = function() {
-  _idleSecondsCounter = 0;
-};
-window.onkeyup = function() {
-  _idleSecondsCounter = 0;
-};
-window.onkeypress = function() {
-  _idleSecondsCounter = 0;
-};
-window.oninput = function() {
-  _idleSecondsCounter = 0;
-};
+// var IDLE_TIMEOUT = 30; //seconds
+// var _idleSecondsCounter = 0;
+// var interval;
+// window.onkeydown = function() {
+//   _idleSecondsCounter = 0;
+// };
+// window.onkeyup = function() {
+//   _idleSecondsCounter = 0;
+// };
+// window.onkeypress = function() {
+//   _idleSecondsCounter = 0;
+// };
+// window.oninput = function() {
+//   _idleSecondsCounter = 0;
+// };
 
 var history = [];
 
-
+//pick a model
 const models = ["/generate_gpt2_ind", "/generate_dialogpt2", "/generate_pipeline"];
 const model = models[Math.floor(Math.random()*models.length)];
-const URL = BASE_URL + model;
+//const URL = BASE_URL + model;
+
+
 console.log(model);
-var start = ['What are you doing today?', 'What are you doing right now?', 'What\'s up?', 'How are you today?', 'What do you like to do?', 'How are you?']
+//var start = ['What are you doing today?', 'What are you doing right now?', 'What\'s up?', 'How are you today?', 'What do you like to do?', 'How are you?']
 
 //class FeedbackButton extends React.Component {
 //  constructor(props) {
@@ -75,196 +83,8 @@ var start = ['What are you doing today?', 'What are you doing right now?', 'What
 //    return(this.state.result)
 //  }
 //}
-class FeedbackBadJoke extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {loading: true, result: <Loading />, trigger: false};
-    this.searchInputTimeout = setTimeout(() => {this.sendfeedback(props).then(
-      myresponse => {
-        console.log(myresponse);
-      	this.state.result = 'Thanks for the feedback!';
-	this.props.triggerNextStep();
-	//this.refresh();
-      });
-  }, 400);
-  }
-  render() {
-    return (this.state.result);
-  }
-
-  sendfeedback(props) {
-    var tosend = {
-      "joketuple" : history,
-      'feedback' : props.steps['user-feedback']['message'],
-	'model': model,
-    }
-    const instance = axios.create({
-      httpsAgent: new https.Agent({  
-        rejectUnauthorized: false,
-        strictSSL: false
-      })
-    });
-
-    return instance.post(feedbackURL,tosend)
-    .then(function(response) {
-      console.log(response.data);
-      history = [];
-      return response.data;
-    })
-    .catch(err=>console.log(err))
-  }
-  //refresh() {
-  //  window.location.replace(myURL);
-  //}
-}
-
-class FeedbackNoJoke extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {loading: true, result: <Loading />, trigger: false};
-    this.searchInputTimeout = setTimeout(() => {this.sendfeedback(props).then(
-      myresponse => {
-        console.log(myresponse);
-      	this.state.result = 'Thanks for the feedback!';
-	this.props.triggerNextStep();
-	//this.refresh();
-      });
-  }, 400);
-  }
-  render() {
-    return (this.state.result);
-  }
-
-  sendfeedback(props) {
-    var tosend = {
-      "joketuple" : history,
-      'feedback' : props.steps['user-nojoke']['message'],
-	'model': model,
-    }
-    const instance = axios.create({
-      httpsAgent: new https.Agent({  
-        rejectUnauthorized: false,
-        strictSSL: false
-      })
-    });
 
 
-    return instance.post(feedbackURL,tosend)
-    .then(function(response) {
-      console.log(response.data);
-      history = [];
-      return response.data;
-    })
-    .catch(err=>console.log(err))
-  }
-  //refresh() {
-  //  window.location.replace(myURL);
-  //}
-}
-
-class Thanks extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {loading: true, result: <Loading />, trigger: false};
-    this.searchInputTimeout = setTimeout(() => {this.sendfeedback(props).then(
-      myresponse => {
-        console.log(myresponse);
-      	this.state.result = 'Thanks for the feedback! Please type another keyword and I will write a joke based on it';
-	this.props.triggerNextStep();
-	//this.refresh();
-      });
-  }, 400);
-  }
-  render() {
-    return (this.state.result);
-  }
-
-  sendfeedback(props) {
-    var tosend = {
-      "joketuple" : history,
-      'feedback' :props.steps['goodoptions']['message']
-    }
-    const instance = axios.create({
-      httpsAgent: new https.Agent({  
-        rejectUnauthorized: false,
-        strictSSL: false
-      })
-    });
-
-    return instance.post(feedbackURL,tosend)
-    .then(function(response) {
-      console.log(response.data);
-      history = [];
-      return response.data;
-    })
-    .catch(err=>console.log(err))
-  }
-  //refresh() {
-  //  window.location.replace(myURL);
-  //}
-}
-class Retriever extends React.Component{
-  constructor(props) {
-    super(props);
-    this.stopTimer();
-    this.CheckIdleTime=this.CheckIdleTime.bind(this);
-    this.state = {loading: true, result: <Loading />, trigger: false, trigfunc: this.props.triggerNextStep};
-    history.push(props.previousStep.message);
-    this.searchInputTimeout = setTimeout(() => {this.makeprediction().then(
-      myresponse => {
-      history.push(myresponse);
-      var next_step;
-      if (myresponse == "Sorry I don't have a joke about that right now"){
-	this.state.result = 'There was no joke returned. Can you please suggest a joke for us? If you can\'t think of one please type no' 
-	next_step = 'user-nojoke';
-      } else {
-        this.state.result = myresponse;
-      	next_step = 'quality';
-      }
-      this.startTimer();
-      console.log('here')
-      this.props.triggerNextStep({ value: next_step , trigger: next_step} );
-    });
-  }, 400);
-  }
-
-  makeprediction(){
-    var tosend = {
-      "history" : history[history.length-1],
-    }
-    const instance = axios.create({
-      httpsAgent: new https.Agent({  
-        rejectUnauthorized: false,
-        strictSSL: false
-      })
-    });
-
-    return instance.post(URL,tosend)
-    .then(function(response) {
-      return response.data;
-    })
-    .catch(err=>console.log(err))
-  }
-
-  render() {
-    return(this.state.result);
-  }
-startTimer() {
-  interval = window.setInterval(this.CheckIdleTime, 1000);
-}
-
-stopTimer() {
-  window.clearInterval(interval);
-}
-CheckIdleTime() {
-    _idleSecondsCounter++;
-    //console.log(_idleSecondsCounter)
-    if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-      //this.props.triggerNextStep({value : 'yes', trigger: 'start1'});
-      _idleSecondsCounter = 0;
-    }
-}
-}
 //class Interfacer extends React.Component{
 //  constructor(props) {
 //    super(props);
@@ -324,16 +144,6 @@ CheckIdleTime() {
 //    }
 //}
 //}
-Retriever.propTypes = {
-  previousStep: PropTypes.object,
-  triggerNextStep: PropTypes.func,
-};
-
-Retriever.defaultProps = {
-  steps: undefined,
-  triggerNextStep: undefined,
-};
-
 
 
 //Interfacer.propTypes = {
@@ -359,8 +169,23 @@ var steps = [
  
  
  },
+ {
+  id: 'emoji-buttons',
+  options:[
+    {value: '🤯', label: '🤯',trigger:'tellme'},
+    {value: '😱', label: '😱',trigger:'tellme'},
+    {value: '😭', label: '😭',trigger:'tellme'},
+    {value: '🙁', label: '🙁',trigger:'tellme'},
+    {value: '😞', label: '😞',trigger:'tellme'},
+    {value: '😊', label: '😊',trigger:'tellme'},
+    {value: '😆', label: '😆',trigger:'tellme'},
+    {value: '🙃', label: '🙃',trigger:'tellme'},
+    {value: '😕', label: '😕',trigger:'tellme'}
+  ]
+},
+
   {
-    id: 'start0',
+    id: 'tellme',
     message: 'Tell me what you want to do today (づ｡◕‿‿◕｡)づ',
     trigger: 'task_options',
   },  
@@ -370,8 +195,7 @@ var steps = [
       {value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
       {value: 'joke', label: 'Give me a joke 🤣',trigger:'jokestart'},
       {value: 'judge', label: 'Judge my joke ⚖️',trigger:'jokestart'}
-    ],   
-    trigger: 'jokestart',
+    ]
   },
   { id: 'jokestart',
     message: 'Alright! Just pick a topic for me! ヾ(⌐■_■)ノ',
@@ -386,31 +210,57 @@ var steps = [
       {value: 'covid', label: 'COVID 🤢',trigger:'custom'},
       {value: 'random', label: 'Random',trigger:'custom'},
       {value: 'custom', label: 'Custom',trigger:'custom'}
-    ],
-      trigger: 'custom'
+    ]
   },
   {
    id: 'custom',
    message: 'What’s your choice?',
    trigger: 'user'	  
   },
-
-{
-    id: 'emoji-buttons',
+  {
+    id: 'user',
+    user: true,
+    trigger: 'message-returner',
+  },
+  {
+    id: 'message-returner',
+    component: <GeneratorModel history={history} model={model} url={URL}/>,
+   // trigger: 'quality',
+    waitAction: true,
+    asMessage: true
+  },
+  {
+    id: 'quality',
+    message: 'Did you like the joke?? \ (•◡•) /',
+    trigger: 'goodoptions'	  
+  }, 
+  {
+    id: 'goodoptions',
     options:[
-      {value: '🤯', label: '🤯',trigger:'start0'},
-      {value: '😱', label: '😱',trigger:'start0'},
-      {value: '😭', label: '😭',trigger:'start0'},
-      {value: '🙁', label: '🙁',trigger:'start0'},
-      {value: '😞', label: '😞',trigger:'start0'},
-      {value: '😊', label: '😊',trigger:'start0'},
-      {value: '😆', label: '😆',trigger:'start0'},
-      {value: '🙃', label: '🙃',trigger:'start0'},
-      {value: '😕', label: '😕',trigger:'start0'}
-    ],
-    trigger: 'start0'
+	    {value: 'good', label: '😍',trigger:'thanks'},
+	    {value: 'bad', label: '😩',trigger:'thanks'}
+    ],	  
+  },
+  {
+    id: 'thanks',
+    component: <Thanks history={history} model={model} feedbackurl={FEEDBACK_URL} />,
+    asMessage: true,
+    waitAction: true,
+    trigger: 'anotherjoke'
   },
 
+  {
+    id: 'anotherjoke',
+    message:'Do you want me to make more jokes? Or do you want to try something else?',
+    trigger: 'anotherjokeoptions'
+  },
+  {
+    id: 'anotherjokeoptions',
+    options:[
+	    {value: 'jokestart', label: 'Another joke',trigger:'jokestart'},
+	    {value: 'no', label: 'Something Else',trigger:'tellme'}
+    ]
+  },
 
 
   //{
@@ -435,40 +285,16 @@ var steps = [
     user: true,
     trigger: 'feedback-nojoke',
   },
- {
-    id: 'user',
-    user: true,
-    trigger: 'message-returner',
-  },
-  {
-    id: 'message-returner',
-    component: <Retriever />,
-   // trigger: 'quality',
-    waitAction: true,
-    asMessage: true
-  },
-  {
-    id: 'quality',
-    message: 'Did you like the joke?? \ (•◡•) /',
-    trigger: 'goodoptions'	  
-  },  
-  {
-    id: 'goodoptions',
-    options:[
-	    {value: 'yes', label: 'yes',trigger:'thanks'},
-	    {value: 'no', label: 'no',trigger:'feedback-form'}
-    ],	  
-  },
   {
     id: 'feedback-nojoke',
-    component: <FeedbackNoJoke />,
+    component: <FeedbackNoJoke history={history} model={model} feedbackurl={FEEDBACK_URL}/>,
     asMessage: true,
     waitAction: true,
     trigger: 'continue new'
   },
   {
     id: 'feedback-badjoke',
-    component: <FeedbackBadJoke />,
+    component: <FeedbackBadJoke history={history} model={model} feedbackurl={FEEDBACK_URL}/>,
     asMessage: true,
     waitAction: true,
     trigger: 'continue new'
@@ -488,14 +314,7 @@ var steps = [
     delay: 1500,
     message: 'Thanks!',
     trigger: 'thanks'
-   },
-   {
-    id: 'thanks',
-    component: <Thanks />,
-    asMessage: true,
-    waitAction: true,
-    trigger: 'continue new'
-  }
+   }
 ];
 
 function App() {
