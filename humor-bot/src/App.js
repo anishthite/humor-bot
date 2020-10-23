@@ -40,8 +40,8 @@ var history = [];
 //pick a model
 const models = ["/generate_gpt2_ind", "/generate_dialogpt2", "/generate_pipeline"];
 const model = models[Math.floor(Math.random()*models.length)];
-//const URL = BASE_URL + model;
-
+const URL = BASE_URL + model;
+console.log(FEEDBACK_URL);
 
 console.log(model);
 //var start = ['What are you doing today?', 'What are you doing right now?', 'What\'s up?', 'How are you today?', 'What do you like to do?', 'How are you?']

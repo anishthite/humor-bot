@@ -14,7 +14,7 @@
     "react-scripts": "3.4.3",
     "react-simple-chatbot": "^0.6.1",
     "styled-components": "^5.1.1",
-    "homepage": "http://anishthite.github.io/humor-bot"
+    "homepage": "https://anishthite.github.io/humor-bot"
   },
   "scripts": {
     "start": "react-scripts start",

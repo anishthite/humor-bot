@@ -38,11 +38,12 @@ class Thanks extends React.Component {
           strictSSL: false
         })
       });
-  
-      return instance.post(this.props.FEEDBACK_URL,tosend)
+  	console.log('feedback');
+	console.log(this.props.feedbackurl);
+      return instance.post(this.props.feedbackurl,tosend)
       .then(function(response) {
         console.log(response.data);
-        this.props.history = [];
+        //this.props.history = [];
         return response.data;
       })
       .catch(err=>console.log(err))

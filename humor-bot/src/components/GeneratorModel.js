@@ -40,8 +40,9 @@ class GeneratorModel extends React.Component{
           strictSSL: false
         })
       });
-  
-      return instance.post(URL,tosend)
+	console.log('IRL'); 
+	console.log(this.props.url);
+      return instance.post(this.props.url,tosend)
       .then(function(response) {
         return response.data;
       })
