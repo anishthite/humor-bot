@@ -204,17 +204,18 @@ var steps = [
   {
     id: 'topicoptions',
     options: [
-      {value: 'music', label: 'Music 🎵',trigger:'custom'},
-      {value: 'sports', label: 'Sports 🏀',trigger:'custom'},
-      {value: 'school', label: 'School 📝',trigger:'custom'},
-      {value: 'covid', label: 'COVID 🤢',trigger:'custom'},
-      {value: 'random', label: 'Random',trigger:'custom'},
+      {value: 'music', label: 'Music 🎵',trigger:'message-returner'},
+      {value: 'sports', label: 'Sports 🏀',trigger:'message-returner'},
+      {value: 'school', label: 'School 📝',trigger:'message-returner'},
+      {value: 'food', label: 'Food 🍕',trigger:'message-returner'},
+      {value: 'covid', label: 'COVID 🤢',trigger:'message-returner'},
+      {value: 'random', label: 'Random',trigger:'message-returner'},
       {value: 'custom', label: 'Custom',trigger:'custom'}
     ]
   },
   {
    id: 'custom',
-   message: 'What’s your choice?',
+   message: 'What’s your keyword?',
    trigger: 'user'	  
   },
   {
