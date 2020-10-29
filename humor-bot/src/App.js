@@ -172,17 +172,66 @@ var steps = [
  {
   id: 'emoji-buttons',
   options:[
-    {value: '🤯', label: '🤯',trigger:'tellme'},
-    {value: '😱', label: '😱',trigger:'tellme'},
-    {value: '😭', label: '😭',trigger:'tellme'},
-    {value: '🙁', label: '🙁',trigger:'tellme'},
-    {value: '😞', label: '😞',trigger:'tellme'},
-    {value: '😊', label: '😊',trigger:'tellme'},
-    {value: '😆', label: '😆',trigger:'tellme'},
-    {value: '🙃', label: '🙃',trigger:'tellme'},
-    {value: '😕', label: '😕',trigger:'tellme'}
+    {value: '🤯', label: '🤯',trigger:'crazy'},
+    {value: '😱', label: '😱',trigger:'ohno'},
+    {value: '😭', label: '😭',trigger:'crying'},
+    {value: '🙁', label: '🙁',trigger:'unhappy'},
+    {value: '😞', label: '😞',trigger:'worried'},
+    {value: '😊', label: '😊',trigger:'smiley'},
+    {value: '😆', label: '😆',trigger:'laughing'},
+    {value: '🙃', label: '🙃',trigger:'upsidedown'},
+    {value: '😕', label: '😕',trigger:'uncertain'}
   ]
 },
+
+  {
+    id: 'crazy',
+    message: 'Oh no! Well my week has been quite rough too. We got this!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'ohno',
+    message: 'Honestly relatable, but we got this!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'crying',
+    message: 'Aww, maybe I can help make you feel better'
+    trigger: 'tellme'
+  },
+  {
+    id: 'unhappy',
+    message: 'Aww, maybe I can help make you feel better'
+    trigger: 'tellme'
+  },
+  {
+    id: 'worried',
+    message: 'I hope I can cheer you up with my jokes!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'smiley',
+    message: 'Yay!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'laughing',
+    message: 'Glad to hear that!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'upsidedown',
+    message: 'Oh no!'
+    trigger: 'tellme'
+  },
+  {
+    id: 'uncertain',
+    message: 'Hmm.'
+    trigger: 'tellme'
+  },
+
+
+
 
   {
     id: 'tellme',
