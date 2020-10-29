@@ -9,10 +9,13 @@ import ChatBot from 'react-simple-chatbot';
 import FeedbackBadJoke from './components/FeedbackBadJoke.js'
 import FeedbackNoJoke from './components/FeedbackNoJoke.js'
 import Thanks from './components/Thanks.js'
+import ThanksClassifier from './components/ThanksClassifer.js'
 import GeneratorModel from './components/GeneratorModel.js'
+import ClassifierModel from './components/ClassifierModel.js'
 
 const BASE_URL = "https://greetez.com:4444" 
 const FEEDBACK_URL = BASE_URL + "/feedback"
+const CLASS_URL = BASE_URL + "/classify"
 //const myURL = "https://greetez.com:3000"
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
@@ -177,62 +180,58 @@ var steps = [
     {value: '😭', label: '😭',trigger:'crying'},
     {value: '🙁', label: '🙁',trigger:'unhappy'},
     {value: '😞', label: '😞',trigger:'worried'},
-    {value: '😊', label: '😊',trigger:'smiley'},
-    {value: '😆', label: '😆',trigger:'laughing'},
     {value: '🙃', label: '🙃',trigger:'upsidedown'},
-    {value: '😕', label: '😕',trigger:'uncertain'}
+    {value: '😕', label: '😕',trigger:'uncertain'},
+    {value: '😊', label: '😊',trigger:'smiley'},
+    {value: '😆', label: '😆',trigger:'laughing'}
   ]
 },
 
   {
     id: 'crazy',
-    message: 'Oh no! Well my week has been quite rough too. We got this!'
+    message: 'Oh no! Well my week has been quite rough too. We got this!',
     trigger: 'tellme'
   },
   {
     id: 'ohno',
-    message: 'Honestly relatable, but we got this!'
+    message: 'Honestly relatable, but we got this!',
     trigger: 'tellme'
   },
   {
     id: 'crying',
-    message: 'Aww, maybe I can help make you feel better'
+    message: 'Aww, maybe I can help make you feel better',
     trigger: 'tellme'
   },
   {
     id: 'unhappy',
-    message: 'Aww, maybe I can help make you feel better'
+    message: 'Aww, maybe I can help make you feel better',
     trigger: 'tellme'
   },
   {
     id: 'worried',
-    message: 'I hope I can cheer you up with my jokes!'
+    message: 'I hope I can cheer you up with my jokes!',
     trigger: 'tellme'
   },
   {
     id: 'smiley',
-    message: 'Yay!'
+    message: 'Yay!',
     trigger: 'tellme'
   },
   {
     id: 'laughing',
-    message: 'Glad to hear that!'
+    message: 'Glad to hear that!',
     trigger: 'tellme'
   },
   {
     id: 'upsidedown',
-    message: 'Oh no!'
+    message: 'Oh no!',
     trigger: 'tellme'
   },
   {
     id: 'uncertain',
-    message: 'Hmm.'
+    message: 'Hmm.',
     trigger: 'tellme'
   },
-
-
-
-
   {
     id: 'tellme',
     message: 'Tell me what you want to do today (づ｡◕‿‿◕｡)づ',
@@ -243,7 +242,7 @@ var steps = [
      options:[
       {value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
       {value: 'joke', label: 'Give me a joke 🤣',trigger:'jokestart'},
-      {value: 'judge', label: 'Judge my joke ⚖️',trigger:'jokestart'}
+      {value: 'judge', label: 'Judge my joke ⚖️',trigger:'ask_joke'}
     ]
   },
   { id: 'jokestart',
@@ -311,6 +310,50 @@ var steps = [
 	    {value: 'no', label: 'Something Else',trigger:'tellme'}
     ]
   },
+// BEGIN HUMOR CLASSIFIER SCRIPT
+  {
+    id: 'ask_joke',
+    message: 'What’s your joke?? 🤩',
+    trigger: 'user_joke'
+  },
+  {
+    id: 'user_joke',
+    user: true,
+    trigger: 'message_classifier'
+  },
+  {
+    id: 'message_classifier',
+    component: <ClassifierModel history={history} url={CLASS_URL}/>,
+   // trigger: 'quality',
+    waitAction: true,
+    asMessage: true
+  },
+  {
+    id: 'classifier_agree',
+    message: 'Do you agree with the score?',
+    trigger: 'classifier_eval_options'
+  }, 
+  {
+    id: 'classifier_eval_options',
+    options: [
+      {value: '😤', label: '😤',trigger:'classifier_feedback'},
+	    {value: '😆', label: '😆',trigger:'classifier_feedback'}
+    ]
+  },
+  {
+    id: 'classifier_feedback',
+    component: <ThanksClassifier history={history} feedbackurl={FEEDBACK_URL} />,
+    asMessage: true,
+    waitAction: true,
+    trigger: 'want_another'
+  },
+  {
+    id: 'want_another',
+    options: [
+      {value: 'nah', label: 'nah',trigger:'tellme'},
+	    {value: 'yea', label: 'yea',trigger:'ask_joke'}
+    ]
+  },
 
 
   //{
@@ -371,7 +414,7 @@ function App() {
   return (
      <div className="App">
 	<div>
-      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Generator" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Dude" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
      </div>
   );
