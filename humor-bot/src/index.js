@@ -8,14 +8,15 @@ import { ThemeProvider } from 'styled-components';
 const theme =  {
     background: '#f5f8fb',
     fontFamily: 'Helvetica Neue',
-    headerBgColor: '#2c9c91',
+    headerBgColor: '#185227',
     headerFontColor: '#fff',
-    headerFontSize: '30px',
-    botBubbleColor: '#2c9c91',
-    // botFontSize: '100px',
-    botFontColor: '#fff',
-    userBubbleColor: '#fff',
+    headerFontSize: '20px',
+    botBubbleColor: '#ededed',
+    botFontSize: '500px',
+    botFontColor: '#4a4a4a',
+    userBubbleColor: '#bbf2c8',
     userFontColor: '#4a4a4a',
+    
 }
 
 

@@ -240,7 +240,7 @@ var steps = [
   {
     id: 'task_options',
      options:[
-      {value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
+      //{value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
       {value: 'joke', label: 'Give me a joke 🤣',trigger:'jokestart'},
       {value: 'judge', label: 'Judge my joke ⚖️',trigger:'ask_joke'}
     ]
@@ -414,7 +414,7 @@ function App() {
   return (
      <div className="App">
 	<div>
-      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Humor Dude" contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Hi There! This is Eddie, I am a humor bot. I can make and judge jokes." contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
      </div>
   );
