@@ -414,7 +414,7 @@ function App() {
   return (
      <div className="App">
 	<div>
-      <ChatBot width="100%" botAvatar='profile.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Hi There! This is Eddie, I am a humor bot. I can make and judge jokes." contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" botAvatar='svgtopng/robot 3.png' userAvatar='svgtopng/happy 2.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Hi There! This is Eddie, I am a humor bot. I can make and judge jokes." contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
      </div>
   );

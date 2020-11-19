@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 const theme =  {
     background: '#f5f8fb',
     fontFamily: 'Helvetica Neue',
-    headerBgColor: '#185227',
+    headerBgColor: '#136259',
     headerFontColor: '#fff',
     headerFontSize: '20px',
     botBubbleColor: '#ededed',
