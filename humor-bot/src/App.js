@@ -242,7 +242,9 @@ var steps = [
      options:[
       //{value: 'game', label: 'Play a game 🎮',trigger:'jokestart'},
       {value: 'joke', label: 'Give me a joke 🤣',trigger:'jokestart'},
-      {value: 'judge', label: 'Judge my joke ⚖️',trigger:'ask_joke'}
+      {value: 'judge', label: 'Judge my joke ⚖️',trigger:'ask_joke'}, 
+      {value: 'exit', label: 'Exit the game', trigger: 'exit_game'}
+
     ]
   },
   { id: 'jokestart',
@@ -407,6 +409,18 @@ var steps = [
     delay: 1500,
     message: 'Thanks!',
     trigger: 'thanks'
+   }, 
+   {
+     id: 'exit',
+     message: 'It\'s time to say goodbye, hope to see you again. Before you leave, would you mind taking a survey for me? It will be very helpful for me to improve.',
+     trigger: 'exitlink'
+   },
+   {
+     id: 'exitlink',
+     component: (
+        <div> Link Doesn't work yet <a href="https://www.google.com/">Take the Survey:</a> </div>
+      ),
+
    }
 ];
 
