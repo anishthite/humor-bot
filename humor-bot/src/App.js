@@ -12,6 +12,7 @@ import Thanks from './components/Thanks.js'
 import ThanksClassifier from './components/ThanksClassifer.js'
 import GeneratorModel from './components/GeneratorModel.js'
 import ClassifierModel from './components/ClassifierModel.js'
+import ExitLink from './components/Exit.js'
 
 const BASE_URL = "https://greetez.com:4444" 
 const FEEDBACK_URL = BASE_URL + "/feedback"
@@ -413,6 +414,9 @@ var steps = [
    {
      id: 'exit',
      message: 'It\'s time to say goodbye, hope to see you again. Before you leave, would you mind taking a survey for me? It will be very helpful for me to improve.',
+     options:[
+      {value: 'exit', label: 'Exit the Game', trigger: 'exitlink'}
+     ],
      trigger: 'exitlink'
    },
    {
@@ -420,6 +424,7 @@ var steps = [
      component: (
         <div> Link Doesn't work yet <a href="https://www.google.com/">Take the Survey:</a> </div>
       ),
+     asMessage: true,
 
    }
 ];
