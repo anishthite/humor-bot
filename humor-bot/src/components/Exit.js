@@ -10,8 +10,6 @@ class OpenLink extends Component {
         super(props);
     }
     render() {
-        const link = this.props.step.metadata.link || '';
-        const text = this.props.step.metadata.text || '';
         const text = 'Link Doesn\'t work yet'
         const link = 'https://www.google.com'
         return (

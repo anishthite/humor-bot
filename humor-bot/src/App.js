@@ -12,7 +12,6 @@ import Thanks from './components/Thanks.js'
 import ThanksClassifier from './components/ThanksClassifer.js'
 import GeneratorModel from './components/GeneratorModel.js'
 import ClassifierModel from './components/ClassifierModel.js'
-import ExitLink from './components/Exit.js'
 
 const BASE_URL = "https://greetez.com:4444" 
 const FEEDBACK_URL = BASE_URL + "/feedback"
@@ -303,14 +302,14 @@ var steps = [
 
   {
     id: 'anotherjoke',
-    message:'Do you want me to make more jokes? Or do you want to try something else?',
+    message:'Do you want me to make more jokes?',
     trigger: 'anotherjokeoptions'
   },
   {
     id: 'anotherjokeoptions',
     options:[
-	    {value: 'jokestart', label: 'Another joke',trigger:'jokestart'},
-	    {value: 'no', label: 'Something Else',trigger:'tellme'}
+	    {value: 'jokestart', label: 'Sure',trigger:'jokestart'},
+	    {value: 'no', label: 'Nah',trigger:'tellme'}
     ]
   },
 // BEGIN HUMOR CLASSIFIER SCRIPT
@@ -412,12 +411,11 @@ var steps = [
     trigger: 'thanks'
    }, 
    {
-     id: 'exit',
-     message: 'It\'s time to say goodbye, hope to see you again. Before you leave, would you mind taking a survey for me? It will be very helpful for me to improve.',
-     options:[
-      {value: 'exit', label: 'Exit the Game', trigger: 'exitlink'}
-     ],
-     trigger: 'exitlink'
+     id: 'exit_game',
+	component: ( <div> It's time to say goodbye, hope to see you again. Before you leave, would you mind taking a survey for me? It will be very helpful for me to improve.  <a href="https://www.google.com/">Take the Survey</a> </div>
+	),
+	   asMessage: true,
+
    },
    {
      id: 'exitlink',
@@ -425,7 +423,6 @@ var steps = [
         <div> Link Doesn't work yet <a href="https://www.google.com/">Take the Survey:</a> </div>
       ),
      asMessage: true,
-
    }
 ];
 
