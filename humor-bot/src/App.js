@@ -430,7 +430,15 @@ function App() {
   return (
      <div className="App">
 	<div>
-      <ChatBot width="100%" botAvatar='svgtopng/robot 3.png' userAvatar='svgtopng/happy 2.png' enableMobileAutoFocus='true' steps={steps} headerTitle="Hi There! This is Eddie, I am a humor bot. I can make and judge jokes." contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      <ChatBot width="100%" botAvatar='svgtopng/robot 3.png' userAvatar='svgtopng/happy 2.png' enableMobileAutoFocus='true' steps={steps} headerComponent ={
+        <div class="header"> 
+        <img src="svgtopng/robot 1.png" align="left" />
+        <h1 style={{ fontSize: '36px', fontFamily: "Suez One"}}>Hi there!</h1>
+        <p style={{ fontSize: '16px', fontFamily: "Open Sans", paddingLeft : '6%' }}>This is Eddie, I am a chatbot. I can help with xxx</p></div>
+      }
+      
+
+       contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
      </div>
   );

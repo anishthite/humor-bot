@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  padding: 10px;
+  text-align: left; 
+ background: #136259;
+  color: white;
+  /*font-size: 30px;*/ 
+  font-family:"Suez One";
+}
+
+.header.otherclass {
+    font-size: 50px; 
+}
+
+/*.someclass {
+  font-family:"Suez One";
+}*/
