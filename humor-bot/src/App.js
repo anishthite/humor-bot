@@ -175,7 +175,7 @@ var steps = [
  {
   id: 'emoji-buttons',
   options:[
-    {value: '🤯', label: '🤯',trigger:'crazy'},
+    {value: '😩', label: '😩',trigger:'crazy'}, //😓
     {value: '😱', label: '😱',trigger:'ohno'},
     {value: '😭', label: '😭',trigger:'crying'},
     {value: '🙁', label: '🙁',trigger:'unhappy'},
