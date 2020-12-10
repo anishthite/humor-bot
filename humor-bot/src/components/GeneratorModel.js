@@ -29,7 +29,11 @@ class GeneratorModel extends React.Component{
         if (myresponse == "Sorry I don't have a joke about that right now"){
       this.state.result = 'There was no joke returned. Can you please suggest a joke for us? If you can\'t think of one please type no' 
       next_step = 'user-nojoke';
-        } else {
+        } else if(myresponse == "Joke is not appropriate"){
+          this.state.result = 'The keyword you typed in is not appropriate. Please type a more appropriate joke.' 
+          next_step = 'user-nojoke';
+        }
+        else {
           this.state.result = myresponse;
             next_step = 'quality';
         }
