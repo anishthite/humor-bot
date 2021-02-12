@@ -1,4 +1,15 @@
 import React from 'react';
+
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 import './App.css';
 //import PropTypes from 'prop-types';
 import ChatBot from 'react-simple-chatbot';
@@ -12,6 +23,7 @@ import Thanks from './components/Thanks.js'
 import ThanksClassifier from './components/ThanksClassifer.js'
 import GeneratorModel from './components/GeneratorModel.js'
 import ClassifierModel from './components/ClassifierModel.js'
+import Home from './components/Home.js'
 
 const BASE_URL = "https://greetez.com:4444" 
 const FEEDBACK_URL = BASE_URL + "/feedback"
@@ -428,8 +440,16 @@ var steps = [
 
 function App() {
   return (
+
+
+
+
      <div className="App">
-	<div>
+         <Router>
+         <Switch>
+         <Route exact path = "/" component={Home}/>
+          <Route path="/bot">
+            <div>
       <ChatBot width="100%" botAvatar='svgtopng/robot 3.png' userAvatar='svgtopng/happy 2.png' enableMobileAutoFocus='true' steps={steps} headerComponent ={
         <div class="header"> 
         <img src="svgtopng/robot 1.png" align="left" />
@@ -440,8 +460,30 @@ function App() {
 
        contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
       </div>
+          </Route>
+      </Switch>
+      </Router>
      </div>
+
   );
 }
+
+function Bot() {
+  return (
+      <div>
+      <ChatBot width="100%" botAvatar='svgtopng/robot 3.png' userAvatar='svgtopng/happy 2.png' enableMobileAutoFocus='true' steps={steps} headerComponent ={
+        <div class="header"> 
+        <img src="svgtopng/robot 1.png" align="left" />
+        <h1 style={{ fontSize: '36px', fontFamily: "Suez One"}}>Hi there!</h1>
+        <p style={{ fontSize: '16px', fontFamily: "Open Sans", paddingLeft : '6%' }}>This is Eddie, I am a chatbot. I can help with xxx</p></div>
+      }
+      
+
+       contentStyle={{ height: '86vh' }} style={{ height: '100%' }} botDelay={0} userDelay={50} />
+      </div>
+  );
+}
+
+
 
 export default App;
