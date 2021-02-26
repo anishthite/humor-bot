@@ -1,4 +1,4 @@
-html {
+/* html {
     -webkit-print-color-adjust: exact;
 }
 * {
@@ -255,7 +255,7 @@ ol > li {
     list-style-type: none;
 }
 
-/* Indent toggle children */
+
 .toggle > li > details {
     padding-left: 1.7em;
 }
@@ -620,4 +620,174 @@ blockquote {
 
 .checkbox-off {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+} */
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+.title {
+    /* position: absolute; */
+    /* width: 201px;
+    height: 65px;
+    left: 120px;
+    top: 125px; */
+    display: flex;
+    /*flex-wrap: nowrap;*/
+    flex-direction:row;
+    text-align: left;
+    align-items: center;
+    /*justify-content: space-between;*/
+    /*margin: 40 40 40 40;*/
+
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    /*line-height: 65px;*/
+    
+    color: rgba(0, 0, 0, 0.87);
 }
+.title h2 {
+    /* position: absolute; */
+    /* width: 201px;
+    height: 65px;
+    left: 120px;
+    top: 125px; */
+ /*   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;*/
+    /*margin: 40 40 40 40;*/
+    /* line-height: 65px; */
+}
+
+.title h5 {
+    /* position: absolute; */
+    /* width: 201px;
+    height: 65px;
+    left: 120px;
+    top: 125px; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    /* line-height: 65px; */
+}
+
+.section {
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+}
+.section h2 {
+    /* position: absolute; */
+    /* width: 201px;
+    height: 65px;
+    left: 120px;
+    top: 125px; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+/*    font-weight: 800;*/
+    font-size: 24px;
+    /* line-height: 65px; */
+}
+
+
+
+.section p {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.section span {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+.section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+/*  border: 3px solid blue;*/
+  /*padding: 20px 40px 40px;*/
+/*  max-width: 70%;*/
+align-items: flex-end;
+  display: flex;
+  /*flex-wrap: nowrap;*/
+  flex-direction:row;
+  &__image {
+    /*margin: 20px 30px 0 0;*/
+    /*width: 500px;*/
+    max-width:100%;
+    /*width: auto;*/
+    /*height: auto/50;*/
+    /*object-fit: contain;*/
+    /*align-self: bottom;*/
+  }
+  &__button {
+    margin: 0 0 20px 20px;
+    /*width: 500px;*/
+    max-width:100%;
+    /*width: auto;*/
+    /*height: auto/50;*/
+    /*object-fit: contain;*/
+    /*align-self: bottom;*/
+  }
+  &__text {
+    width: 70%;
+    flex: 1 1 auto;
+  }
+}
+
+.button {
+        /*margin: 20 20 20 20;*/
+        flex-direction:row;
+}
+@media (max-width: 1200px) {
+  .container {
+    /*  border: 3px solid blue;*/
+      /*padding: 20px 40px 40px;*/
+    /*  max-width: 70%;*/
+    align-items: center;
+    display: flex;
+    /*flex-wrap: nowrap;*/
+    flex-direction:column;
+    &__image {
+      /*margin: 20px 30px 0 0;*/
+      /*width: 500px;*/
+      max-width:100%;
+      /*width: auto;*/
+      /*height: auto/50;*/
+      /*object-fit: contain;*/
+      /*align-self: bottom;*/
+    }
+    &__button {
+      margin: 0 0 20px 20px;
+      /*width: 500px;*/
+      max-width:100%;
+      /*width: auto;*/
+      /*height: auto/50;*/
+      /*object-fit: contain;*/
+      /*align-self: bottom;*/
+      /*flex-direction:column;*/
+
+    }
+    &__text {
+      width: 70%;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+
