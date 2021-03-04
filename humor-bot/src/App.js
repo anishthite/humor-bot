@@ -460,7 +460,7 @@ function stepsfrommodel(model) {
 function App() {
   return (
 
-     <div className="App" basename={process.env.PUBLIC_URL}>
+     <div className="App" basename={window.location.pathname || ''}>
          <Router>
          <Switch>
          <Route exact path = "/" component={Home}/>
