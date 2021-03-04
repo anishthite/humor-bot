@@ -4,7 +4,7 @@ import './App.css';
 import ChatBot from 'react-simple-chatbot';
 //import axios from 'axios'
 //import https from 'https'
-//import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 //import Typography from '@material-ui/core/Typography';
 import FeedbackBadJoke from './components/FeedbackBadJoke.js'
 import FeedbackNoJoke from './components/FeedbackNoJoke.js'
@@ -13,7 +13,7 @@ import ThanksClassifier from './components/ThanksClassifer.js'
 import GeneratorModel from './components/GeneratorModel.js'
 import ClassifierModel from './components/ClassifierModel.js'
 
-const BASE_URL = "https://greetez.com:4444" 
+const BASE_URL = "https://raspi.brrrr.live:4242" 
 const FEEDBACK_URL = BASE_URL + "/feedback"
 const CLASS_URL = BASE_URL + "/classify"
 //const myURL = "https://greetez.com:3000"
@@ -86,6 +86,20 @@ console.log(model);
 //    return(this.state.result)
 //  }
 //}
+
+class Survey extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+	 componentDidMount() {
+      if (typeof window !== 'undefined') {
+           window.location.href = "http://google.com";
+      }
+ }
+    render() {
+	return (<div></div>)
+    }
+}
 
 
 //class Interfacer extends React.Component{
@@ -415,8 +429,23 @@ var steps = [
 	component: ( <div> It's time to say goodbye, hope to see you again. Before you leave, would you mind taking a survey for me? It will be very helpful for me to improve.  <a href="https://www.google.com/">Take the Survey</a> </div>
 	),
 	   asMessage: true,
+	   trigger: 'take_survey'
 
    },
+   {
+   	id: 'take_survey',
+	options:[{value: 'nah', label: 'I\'ll take the survery!',trigger:'survey'}]
+   },
+   {
+   	id: 'survey',
+	component: <Survey />, 
+	asMessage: true
+   },
+   {
+   	id: 'tak_survey',
+	component: ( <Button variant="contained" color="primary" href="https://www.google.com/"> Take The Survey </Button> )
+   },
+
    {
      id: 'exitlink',
      component: (
@@ -434,7 +463,7 @@ function App() {
         <div class="header"> 
         <img src="svgtopng/robot 1.png" align="left" />
         <h1 style={{ fontSize: '36px', fontFamily: "Suez One"}}>Hi there!</h1>
-        <p style={{ fontSize: '16px', fontFamily: "Open Sans", paddingLeft : '6%' }}>This is Eddie, I am a chatbot. I can help with xxx</p></div>
+        <p style={{ fontSize: '16px', fontFamily: "Open Sans", paddingLeft : '6%' }}>Hi!  I am Eddie. I can make and judge jokes.</p></div>
       }
       
 
